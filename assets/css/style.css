@@ -1,0 +1,152 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Container for Forms (Search and Add) */
+.form-container {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 20px;
+}
+
+/* Flexbox for Form Layout */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button[type="submit"] {
+    padding: 12px 20px;
+    border: none;
+    background-color: #28a745; /* Hijau */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #1e7e34;
+}
+
+/* List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 700px;
+}
+
+li {
+    background: #fff;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Flexbox untuk item daftar agar konten sejajar */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Memisahkan task dengan aksi */
+}
+
+/* Task Name Styling */
+li .task-name {
+    flex-grow: 1;
+    font-size: 18px;
+    color: #333;
+    padding-right: 15px; /* Memberi jarak ke tombol aksi */
+    word-break: break-word; /* Mencegah teks terlalu panjang merusak layout */
+}
+
+/* Action Links Container */
+.action-links {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antar link aksi */
+    flex-shrink: 0; /* Mencegah bagian aksi mengecil */
+}
+
+li a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+/* Style for specific actions */
+li a[href*="complete"] {
+    color: #007bff; /* Biru */
+    border: 1px solid #007bff;
+}
+
+li a[href*="delete"] {
+    color: #dc3545; /* Merah */
+    border: 1px solid #dc3545;
+}
+
+li a[href*="edit"] {
+    color: #ffc107; /* Kuning */
+    border: 1px solid #ffc107;
+}
+
+li a:hover {
+    opacity: 0.8;
+}
+
+/* Completed Tag Styling */
+li .done-tag {
+    color: white;
+    background-color: #28a745;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    li .action-links {
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+}
